@@ -22,6 +22,7 @@ import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
 import Contact from "./pages/contact/Contact";
 import ProductPreview from "./pages/dashboard/ProductPreview";
+import ProductLog from "./components/product/productLog/ProductLog";
 
 axios.defaults.withCredentials = true;
 
@@ -92,6 +93,15 @@ function App() {
             <Sidebar>
               <Layout>
                 <ProductPreview />
+              </Layout>
+            </Sidebar>
+          }/>
+              <Route
+          path="/product-log"
+          element={
+            <Sidebar>
+              <Layout>
+                <ProductLog />
               </Layout>
             </Sidebar>
           }/>

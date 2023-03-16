@@ -84,7 +84,7 @@ const ProductForm = ({
           />
 
           <div className="--my">
-            <button type="submit" className="--btn --btn-primary">
+            <button type="submit" className="text-2xl border border-blue-600 bg-blue-700 text-white p-2 hover hover-red-400">
               Save Product
             </button>
           </div>

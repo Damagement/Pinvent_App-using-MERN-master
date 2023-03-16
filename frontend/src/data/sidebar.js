@@ -1,6 +1,8 @@
 import { FaTh, FaRegChartBar, FaCommentAlt } from "react-icons/fa";
 import { BiImageAdd } from "react-icons/bi";
 import {MdOutlinePreview} from "react-icons/md"
+import {SiLogstash} from "react-icons/si"
+
 const menu = [
   {
     title: "Dashboard",
@@ -17,6 +19,11 @@ const menu = [
   icon:<MdOutlinePreview/>,
   path:"/product-preview",
   },
+  {
+    title:"Product Log",
+    icon:<SiLogstash/>,
+    path:"/product-log",
+    },
   {
     title: "Account",
     icon: <FaRegChartBar />,

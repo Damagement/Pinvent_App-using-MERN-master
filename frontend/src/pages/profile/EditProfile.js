@@ -29,7 +29,7 @@ const EditProfile = () => {
     photo: user?.photo,
   };
   const [profile, setProfile] = useState(initialState);
-  const [profileImage, setProfileImage] = useState("");
+  const [profileImage, setProfileImage] = useState(initialState);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +37,8 @@ const EditProfile = () => {
   };
 
   const handleImageChange = (e) => {
-    setProfileImage(e.target.files[0]);
+    const { photo, value } = e.target;
+    setProfileImage({ ...profile, [photo]: value });
   };
 
   const saveProfile = async (e) => {
@@ -52,9 +53,7 @@ const EditProfile = () => {
       //     profileImage.type === "image/jpg" ||
       //     profileImage.type === "image/png")
       // )
-       {
-
-
+      {
         // Save Profile
         const formData = {
           name: profile.name,
@@ -82,7 +81,7 @@ const EditProfile = () => {
 
       <Card cardClass={"card --flex-dir-column"}>
         <span className="profile-photo">
-          <img src={user?.photo} alt="profilepic" />
+          <img src={profile?.photo} alt="profilepic" />
         </span>
         <form className="--form-control --m" onSubmit={saveProfile}>
           <span className="profile-data">
@@ -122,7 +121,12 @@ const EditProfile = () => {
             </p>
             <p>
               <label>Photo:</label>
-              <input type="file" name="image"   onChange={(e) => handleImageChange(e)} />
+              <input
+                type="file"
+                name="image"
+
+                onChange={handleImageChange}
+              />
             </p>
             <div>
               <button className="--btn --btn-primary">Save Changes</button>

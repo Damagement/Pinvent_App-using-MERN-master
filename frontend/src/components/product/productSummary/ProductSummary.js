@@ -13,6 +13,7 @@ import {
   selectOutOfStock,
   selectTotalStoreValue,
 } from "../../../redux/features/product/productSlice";
+import { useNavigate } from "react-router-dom";
 
 // Icons
 const earningIcon = <AiFillDollarCircle size={40} color="#fff" />;
@@ -26,6 +27,7 @@ export const formatNumbers = (x) => {
 };
 
 const ProductSummary = ({ products }) => {
+  const navigate=useNavigate();
   const dispatch = useDispatch();
   const totalStoreValue = useSelector(selectTotalStoreValue);
   const outOfStock = useSelector(selectOutOfStock);

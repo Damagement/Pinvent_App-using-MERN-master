@@ -497,3 +497,7 @@ a:hover {
   background-color: var(--light-blue);
   height: 100%;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
